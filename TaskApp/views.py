@@ -101,7 +101,7 @@ def doctor_signup_page(request):
         state = request.POST['txtState1']
         pincode = int(request.POST['txtPinCode1'])
         if password == confirm_password:
-            if CustomUser.objects.filter(username = user_name).exists():
+            if CustomUser.objects.filter(username=user_name).exists():
                 return render(request, 'doctor_signup.html', {'Msg': 'Username already in use please use different'})
             elif CustomUser.objects.filter(email=email_id).exists():
                 return render(request, 'doctor_signup.html', {'Msg': 'Email already exist use different'})
