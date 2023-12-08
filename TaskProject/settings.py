@@ -78,11 +78,12 @@ WSGI_APPLICATION = 'TaskProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql12668731',
-        'USER': 'sql12668731',
-        'PASSWORD': 'eeiv9NMHVu',
-        'HOST': 'sql12.freemysqlhosting.net',
-        'PORT': 3306
+        'NAME': os.environ.get('hospitaldatabase'),
+        'HOST': os.environ.get('ap-south.connect.psdb.cloud'),
+        'PORT': os.environ.get('3306'),
+        'USER': os.environ.get('gphdud7yui5s8amyz6mn'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'OPTIONS': {'ssl': {'ca': os.environ.get('/etc/ssl/certs/ca-certificates.crt')}}
     }
 }
 
