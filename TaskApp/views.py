@@ -102,9 +102,9 @@ def doctor_signup_page(request):
         pincode = int(request.POST['txtPinCode1'])
         if password == confirm_password:
             if CustomUser.objects.filter(username = user_name).exists():
-                return render(request, 'patient_signup.html', {'Msg': 'Username already in use please use different'})
+                return render(request, 'doctor_signup.html', {'Msg': 'Username already in use please use different'})
             elif CustomUser.objects.filter(email=email_id).exists():
-                return render(request, 'patient_signup.html', {'Msg': 'Email already exist use different'})
+                return render(request, 'doctor_signup.html', {'Msg': 'Email already exist use different'})
             else:
                 u1 = CustomUser.objects.create_superuser(
                     first_name=first_name, 
