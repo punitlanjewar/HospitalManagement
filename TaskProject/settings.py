@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'TaskProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Taskdatabase',
-        'USER': 'root',
-        'PASSWORD': 'sqlserver',
-        'HOST': 'localhost',
+        'NAME': 'sql12668731',
+        'USER': 'sql12668731',
+        'PASSWORD': 'eeiv9NMHVu',
+        'HOST': 'sql12.freemysqlhosting.net',
         'PORT': 3306
     }
 }
