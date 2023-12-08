@@ -82,7 +82,7 @@ DATABASES = {
         'HOST': os.environ.get('ap-south.connect.psdb.cloud'),
         'PORT': os.environ.get('3306'),
         'USER': os.environ.get('gphdud7yui5s8amyz6mn'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'PASSWORD': os.environ.get('pscale_pw_YdfZKyPnpMFHFXWQiTRJyMMqRIoNnvdr9DfDPZjZX9w'),
         'OPTIONS': {'ssl': {'ca': os.environ.get('/etc/ssl/certs/ca-certificates.crt')}}
     }
 }

@@ -24,8 +24,7 @@ def login_page(request):
                     'pincode': u1.user_pincode,
                     'profile_picture': u1.profile_picture,
                 }
-                # return render(request, 'doctor_home.html', {'DoctorDetails': doctor_details})
-                return HttpResponseRedirect('doctor_home', {'DoctorDetails': doctor_details})
+                return render(request, 'doctor_home.html', {'DoctorDetails': doctor_details})
             else:
                 login(request, u1)
                 user_details = {
@@ -80,7 +79,7 @@ def patient_signup_page(request):
                     profile_picture = profile_picture
                     )
                 u1.save()
-                return render(request, 'login.html', {'Success1': 'Account Created Successfully'})
+                return render(request, 'patient_signup.html', {'Success1': 'Account Created Successfully'})
         else:
             return render(request, 'patient_signup.html', {'Msg1': 'Password & Confirm Password not matching'})
     else:            
@@ -120,7 +119,7 @@ def doctor_signup_page(request):
                     profile_picture = profile_picture
                     )
                 u1.save()
-                return render(request, 'login.html', {'Success1': 'Account Created Successfully'})
+                return render(request, 'doctor_signup.html', {'Success1': 'Account Created Successfully'})
         else:
             return render(request, 'doctor_signup.html', {'Msg1': 'Password & Confirm Password not matching'})
     else:            
