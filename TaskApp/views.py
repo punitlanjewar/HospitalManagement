@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login
-from .models import CustomUser
+from .models import BlogCategory, BlogPost, CustomUser
 # Create your views here.
 
 def login_page(request):
@@ -131,3 +131,30 @@ def doctor_home_page(request):
 def patient_home_page(request):
     return render(request, 'patient_home.html')
 
+
+def blog_post_page(request):
+    if request.method == 'POST':
+        b1 = BlogPost()
+        b1.title = request.POST['txtTitle']
+        b1.image = request.FILES.get('txtImage')
+        b1.category = BlogCategory.objects.get(category_name=request.POST['txtCategory'])
+        b1.summary = request.POST['txtSummary']
+        b1.content = request.POST['txtContent']
+        b1.draft = request.POST.get('chkDraft') == 'on' # if check box is selected
+        
+        b1.save()
+        return render(request, 'upload_blog.html', {'Msg': 'Data Added Successfully'})
+    else:
+        categories = BlogCategory.objects.all()
+        return render(request, 'upload_blog.html', {'categories': categories})
+
+
+def display_blog_page(request):
+    post_data = BlogPost.objects.all()
+    return render(request, 'view_blog.html', {'PostData': post_data})
+
+
+def blog_list_page(request):
+    category = BlogCategory.objects.all()    
+    posts = BlogPost.objects.filter(draft=False)
+    return render(request, 'blog_list.html', {'Posts': posts, 'Category': category})

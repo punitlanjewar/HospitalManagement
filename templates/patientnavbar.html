@@ -22,6 +22,11 @@
     <div class="navbar-header">
       <a class="navbar-brand stdmanag" href="">Patient DashBoard</a>
     </div>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link div01" href="{% url 'patient_home' %}"><span class="material-icons">home</span>&nbsp;Home</a></li>
+      <li class="nav-item"><a class="nav-link div01" href="{% url 'blog_list' %}"><span class="material-icons">view_list</span>&nbsp;View Post</a></li>
+      <li class="nav-item"><a class="nav-link div01" href="{% url 'login' %}"><span class="material-icons">logout</span> Logout</a></li>
+  </ul>
   </div>
 </nav>
 {% block content %} <!-- to use same nave bar in same html page but content of html pages will be different and the content will be written inside this block-->
