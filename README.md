@@ -2,7 +2,7 @@
 
 **Overview**
 
--The Medical Blog Management System is a Django-based web application designed to manage user authentication, blog posts, and user-specific dashboards for doctors and patients. 
+- The Medical Blog Management System is a Django-based web application designed to manage user authentication, blog posts, and user-specific dashboards for doctors and patients. 
 - The system includes functionalities for user registration (signup), login, blog post creation, and displaying blog posts.
 - This README file provides an overview of the project structure, functionalities, and steps to run the project locally.
 
@@ -15,7 +15,10 @@ The project comprises several Django views that handle user interactions and dis
 
 - Handles user login based on the credentials provided.
 - Differentiates between doctors (superusers) and patients (regular users) and redirects them to their respective home pages.
-- Patient Signup Page (patient_signup_page):
+  
+
+**Patient Signup Page (patient_signup_page):**
+
 - Allows patients to create an account.
 - Checks for duplicate usernames and emails.
 
